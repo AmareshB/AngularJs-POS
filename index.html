@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guided Flows</title>
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+</head>
+<body ng-app = "myApp.readJson" ng-cloak ng-controller="readJsonController">
+	<input type="text" name="test" ng-model="hello" ng-change="change()"> {{hello}}
+
+<div class="mainDiv">
+	<div style="float:left; width: 50% ; height : 100% ;	border : 5px red solid"  ng-click="showData()">
+	<input type="button" name="" value="Click me for data">
+	<h1>{{resultData}} </h1>
+	<input type="text" name="" ng-show="showtextfield">
+   </div>
+   <div style="float:left;width:48%;height: 100%;border : 5px yellow solid">
+   jkl;
+   </div>
+</div>
+
+	<script  src="./lib/angular.js"></script>
+	<script  src="app.js"></script>
+	<script  src="./controllers/readJson.js"></script>
+</body>
+</html>

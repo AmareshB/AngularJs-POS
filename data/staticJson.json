@@ -1,0 +1,14 @@
+{
+  "prompt": [
+    {
+      "dispType": "textfield",
+      "id": "textfield_1",
+      "label": "Name"
+    },
+    {
+      "dispType": "textfield",
+      "id": "textfield_2",
+      "label": "MDN"
+    }
+  ]
+}
