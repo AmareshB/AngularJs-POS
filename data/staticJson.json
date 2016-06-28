@@ -9,6 +9,12 @@
       "dispType": "textfield",
       "id": "textfield_2",
       "label": "MDN"
+    },
+    {
+      "dispType": "radio",
+      "id": "radio_1",
+      "content": "MDN",
+      "answers" : {}
     }
   ]
 }

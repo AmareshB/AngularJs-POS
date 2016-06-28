@@ -4,17 +4,23 @@
 	<title>Guided Flows</title>
 	<link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
-<body ng-app = "myApp.readJson" ng-cloak ng-controller="readJsonController">
+<body ng-cloak ng-app = "myApp"  ng-controller="readJsonController">
 	<input type="text" name="test" ng-model="hello" ng-change="change()"> {{hello}}
 
 <div class="mainDiv">
-	<div style="float:left; width: 50% ; height : 100% ;	border : 5px red solid"  ng-click="showData()">
-	<input type="button" name="" value="Click me for data">
-	<h1>{{resultData}} </h1>
-	<input type="text" name="" ng-show="showtextfield">
+	<div style="float:left; width: 50% ; height : 100% ;	border : 5px red solid"  >
+		<input type="button" name="" value="Click me for data" ng-click="showData()">
+		<h1>{{resultData}} </h1>
+		
+
+		<div ng-bind-html="htmlContent">{{htmlContent}} </div>
+
    </div>
+
+   
+
    <div style="float:left;width:48%;height: 100%;border : 5px yellow solid">
-   jkl;
+   Right Side Content
    </div>
 </div>
 
