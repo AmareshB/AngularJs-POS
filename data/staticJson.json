@@ -3,18 +3,36 @@
     {
       "dispType": "textfield",
       "id": "textfield_1",
-      "label": "Name"
+      "label": "Name",
+      "target":""
     },
     {
       "dispType": "textfield",
       "id": "textfield_2",
-      "label": "MDN"
+      "label": "MDN",
+      "target":""
     },
     {
       "dispType": "radio",
       "id": "radio_1",
-      "content": "MDN",
-      "answers" : {}
+      "content": "Do you want to suspend or Reconnect ? ",
+      "target":"button_suspend",
+      "answers" : {
+        "answer" : [{
+          "id" : "radio_1",
+          "content" : "Suspend",
+          "value" : "Suspend"
+        },{
+          "id" : "radio_2",
+          "content" : "Reconnect",
+          "value" : "Reconnect"
+        }]
+      }
+    },
+    {
+      "dispType": "button",
+      "id": "button_suspend",
+      "content": "Suspend"
     }
   ]
 }

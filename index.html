@@ -5,23 +5,24 @@
 	<link rel="stylesheet" type="text/css" href="./styles/style.css">
 </head>
 <body ng-cloak ng-app = "myApp"  ng-controller="readJsonController">
-	<input type="text" name="test" ng-model="hello" ng-change="change()"> {{hello}}
-
+	
 <div class="mainDiv">
-	<div style="float:left; width: 50% ; height : 100% ;	border : 5px black solid"  >
+	<div style="width : 100%; height:10%;border: 3px solid green">
+		<h3>Guided Flows header</h3>
+	</div>
+	<div style="float:left; width: 50% ; height : 90% ;	border : 0px black solid"  >
 		<input type="button" name="" value="Click me for data" ng-click="showData()">
 		<h1>{{resultData}} </h1>
 		
-
 		<div ng-bind-html="htmlContent" >{{htmlContent}} </div>
 
    </div>
+<div style="float:left;  height : 90% ;	border :  black solid"></div>
 
-   
-
-   <div style="float:left;width:48%;height: 100%;border : 5px yellow solid">
-   Right Side Content
+   <div style="float:right;width:48%;height: 90%;border : 0px yellow solid">
+   Right Side Content - Message Board
    </div>
+
 </div>
 
 	<script  src="./lib/angular.js"></script>
