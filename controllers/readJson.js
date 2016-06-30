@@ -59,7 +59,7 @@ readData.controller('readJsonController', ['$scope','$http','$sce' ,function($sc
 	var genButton = function(prompt,responseData){
 		var htmlContent = '<input type = "button" id="'+prompt.id+'"value = "'+prompt.content+'">';
 
-			if(prompt.target!== ''){
+			if(prompt.target!== ''){	/*Change isempty check for target as its undefined sometimes*/
 			var target = prompt.target;
 			htmlContent += showTarget(target,responseData);
 		}
