@@ -2,7 +2,7 @@ var readData = angular.module('myApp.readJson',[]);
 
 readData.controller('readJsonController', ['$scope','$http','$sce' ,function($scope,$http,$sce){
 	$scope.showData = function(){
-		var result = $http.get('https://api.myjson.com/bins/2ctn1');
+		var result = $http.get('https://api.myjson.com/bins/12iz1');
 		result.success(function(data){
 			console.log(data.prompt);
 			var htmlContent = '';
@@ -26,7 +26,6 @@ readData.controller('readJsonController', ['$scope','$http','$sce' ,function($sc
 				} else if (control.dispType === 'button') {
 					htmlContent = genButton(prompt , responseData);
 				}
-				//$scope.htmlContent = $sce.trustAsHtml(htmlContent);
 			
 		return htmlContent;	
 	}
@@ -34,7 +33,7 @@ readData.controller('readJsonController', ['$scope','$http','$sce' ,function($sc
 		var htmlContent = '<div>' + prompt.label+' : <input type="text" name='+prompt.label+'>' + '</div>';
 		if(prompt.target!== ''){
 			var target = prompt.target;
-			showTarget(target,responseData);
+			htmlContent += showTarget(target,responseData);
 		}
 		console.log('htmlContent : ' + htmlContent);
 		return htmlContent;
@@ -48,14 +47,30 @@ readData.controller('readJsonController', ['$scope','$http','$sce' ,function($sc
 			htmlContent += '<input type = "radio" id = "'+answer[i].id+'"name = "'+prompt.answers.id+
 			'"value="'+answer[i].value+'"">'+answer[i].content+'</input><br/>';
 		}
+
+		if(prompt.target!== ''){
+			var target = prompt.target;
+			htmlContent += showTarget(target,responseData);
+		}
+
   		return htmlContent;
+	}
 
+	var genButton = function(prompt,responseData){
+		var htmlContent = '<input type = "button" id="'+prompt.id+'"value = "'+prompt.content+'">';
 
+			if(prompt.target!== ''){
+			var target = prompt.target;
+			htmlContent += showTarget(target,responseData);
+		}
+
+		return htmlContent;
 	}
 	 var showTarget = function(target,responseData) {
+	 	var targetHtmlContent = '';
 	 	for (var i = 0; i < responseData.prompt.length; i++) {
-	 		if(responseData.prompt.id === 'target' ) {
-
+	 		if(responseData.prompt[i].id === target ) {
+	 			targetHtmlContent = genControls(responseData.prompt[i],responseData);
 	 		}
 	 	}
 	 }
