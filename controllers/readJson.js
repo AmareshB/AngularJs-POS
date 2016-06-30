@@ -6,11 +6,14 @@ readData.controller('readJsonController', ['$scope','$http','$sce' ,function($sc
 		promise.success(function(data){
 			//console.log(data);
 			console.log(data.prompt);
+			var htmlContent = '';
 			for (var i = 0; i < data.prompt.length; i++) {
 				$scope.control = data.prompt[i];
 				if ($scope.control.dispType == 'textfield') {
 						$scope.showtextfield = true;
-						$scope.htmlContent = genText(data.prompt[i]);
+						htmlContent += genText(data.prompt[i]);
+						$scope.htmlContent = $sce.trustAsHtml(htmlContent);
+						console.log($scope.htmlContent);
 				}
 			}
 		});
